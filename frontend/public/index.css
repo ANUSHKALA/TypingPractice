@@ -1,15 +1,25 @@
+
+body{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4_RaTjx4uwP0DiAhcrJFswVop4zqKtTO3zA&usqp=CAU');
+    background-repeat: no-repeat;
+    background-size: auto;
+
+
+}
+
 h1{
     text-align: center;
     position: relative;
 }
+
 .wordBox {
-    background-color: peachpuff;
+    background-color: rgb(54, 225, 193);
     width: 50%;
     position: relative;
     margin: 5% auto 25% auto;
     padding: 12%;
     border: 1%;
     border-style: solid;
-    border-color: brown;
+    border-color: rgb(8, 10, 58);
     border-width: 5px;
 }
