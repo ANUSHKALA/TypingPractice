@@ -2,3 +2,14 @@ h1{
     text-align: center;
     position: relative;
 }
+.wordBox {
+    background-color: peachpuff;
+    width: 50%;
+    position: relative;
+    margin: 5% auto 25% auto;
+    padding: 12%;
+    border: 1%;
+    border-style: solid;
+    border-color: brown;
+    border-width: 5px;
+}
