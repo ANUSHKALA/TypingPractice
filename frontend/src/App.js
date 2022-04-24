@@ -9,7 +9,7 @@ export default function App(){
     return(
         <h1>
             < Header />
-            <div>
+            <div className="parent">
                 < RandomWord />
                 < Inputbox />
             </div>

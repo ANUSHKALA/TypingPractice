@@ -19,3 +19,8 @@ h1{
     margin: auto;
     display: block;
 }
+
+.parent {
+    display: grid;
+    place-items: center;
+  }

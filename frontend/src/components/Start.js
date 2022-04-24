@@ -9,20 +9,26 @@ export default function Start(props){
     const [stopVisible, setStopVisible] = useState(false);
     let interv = null;
 
+    function back(){
+        document.get = "TIMER";
+    }
+
 
     function handleStart(){
         setStart(!start);
         setStartVisible(!startVisible);
         setStopVisible(!stopVisible);
         document.getElementById('word').innerHTML = randomWords({exactly:1,wordsPerString:2,join:''});
+        console.log(document.getElementById('word').innerHTML);
     }
     if(startVisible == true && stopVisible == false){
         return(
             <button
+            name='start'
             id="start"
             onClick={() => [
                 handleStart(),
-                props.change()
+                props.change(),
             ]}
             className='btn btn-success'>
                 Start Practice
@@ -30,12 +36,16 @@ export default function Start(props){
         )
     }
     else{
-        console.log("no practice!")
         return(
             <button
+            name='stop'
             id="stop"
             onClick={() => [
-                clearInterval(interv)
+                props.setStopTime(true),
+                console.log(props.stopTime),
+                clearInterval(interv),
+                setStartVisible(!startVisible),
+                setStopVisible(!stopVisible),
             ]}
             className='btn btn-danger'>
                 Stop
