@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 const randomWords = require('random-words');
 
 
-export default function Start(){
+export default function Start(props){
 
     const [start, setStart] = useState(false);
-    const [startVisible, setStartVisible] = useState(true)
-    const [stopVisible, setStopVisible] = useState(false)
+    const [startVisible, setStartVisible] = useState(true);
+    const [stopVisible, setStopVisible] = useState(false);
+    let interv = null;
 
 
     function handleStart(){
@@ -17,7 +18,13 @@ export default function Start(){
     }
     if(startVisible == true && stopVisible == false){
         return(
-            <button id="start" onClick={handleStart} className='btn btn-success'>
+            <button
+            id="start"
+            onClick={() => [
+                handleStart(),
+                props.change()
+            ]}
+            className='btn btn-success'>
                 Start Practice
             </button>
         )
@@ -25,7 +32,12 @@ export default function Start(){
     else{
         console.log("no practice!")
         return(
-            <button id="stop" onClick={handleStart} className='btn btn-danger'>
+            <button
+            id="stop"
+            onClick={() => [
+                clearInterval(interv)
+            ]}
+            className='btn btn-danger'>
                 Stop
             </button>
         )
