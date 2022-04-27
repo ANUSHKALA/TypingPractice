@@ -4,7 +4,7 @@ export default function RandomWord(){
 
     return(
         <div className="wordBox">
-            <h1 id='word' className='my-3'> trg </h1>
+            <h1 id='word' className='my-3'> Words </h1>
         </div>
     );
 

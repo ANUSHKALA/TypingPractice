@@ -6,12 +6,20 @@ import Start from "./components/Start";
 import Timer from "./components/Timer";
 
 export default function App(){
+
+
+    function handleChange(e){
+        const {name,value} = e.target;
+        console.log(value)
+    }
+
+
     return(
         <h1>
             < Header />
             <div className="parent">
                 < RandomWord />
-                < Inputbox />
+                < Inputbox onType={handleChange} />
             </div>
         </h1>
     );
