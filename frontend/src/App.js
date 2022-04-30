@@ -1,9 +1,5 @@
-import React from "react";
-import Header from "./components/Header";
-import Inputbox from "./components/Inputbox";
-import RandomWord from "./components/RandomWord";
-import Start from "./components/Start";
-import Timer from "./components/Timer";
+import Navbar from "./components/Navbar";
+
 
 export default function App(){
 
@@ -16,11 +12,8 @@ export default function App(){
 
     return(
         <h1>
-            < Header />
-            <div className="parent">
-                < RandomWord />
-                < Inputbox onType={handleChange} />
-            </div>
+            <Navbar />
+            <div className="container">Bleh</div>
         </h1>
     );
 }

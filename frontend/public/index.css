@@ -3,6 +3,18 @@ h1{
     position: relative;
 }
 
+body {
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/ffd6f82c-60e2-4c97-bdc9-850e966f3ed7/pink-flowers.png");
+}
+
+#container {
+    border: 12px solid #B22222;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    }
+    
+
 .wordBox {
     background-color: peachpuff;
     width: 50%;
@@ -13,6 +25,7 @@ h1{
     border-style: solid;
     border-color: brown;
     border-width: 5px;
+    border-radius: 10px;
 }
 
 #input {
