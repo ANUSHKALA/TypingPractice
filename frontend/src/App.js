@@ -1,3 +1,4 @@
+import InputBox from "./components/InputBox";
 import Navbar from "./components/Navbar";
 
 
@@ -13,7 +14,7 @@ export default function App(){
     return(
         <h1>
             <Navbar />
-            <div className="container">Bleh</div>
+            <InputBox />
         </h1>
     );
 }

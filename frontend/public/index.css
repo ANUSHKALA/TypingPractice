@@ -4,7 +4,16 @@ h1{
 }
 
 body {
-    background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/ffd6f82c-60e2-4c97-bdc9-850e966f3ed7/pink-flowers.png");
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/watercolor.png");
+}
+
+.nav-wrapper {
+    background-color: #d46f7e;
+}
+
+.card {
+    margin: 25%;
+    font-size: 15px;
 }
 
 #container {
