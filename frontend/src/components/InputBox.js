@@ -1,17 +1,30 @@
 import React, { useState } from 'react'
+const random = require("random-words")
 
 export default function InputBox(){
-    const [timer,setTimer] = (useState(15));
+    const [timer,setTimer] = useState(15);
+    const [changeWord,setChangeWord] = useState(false);
+    const [seeStop,setSeeStop] = useState(false);
 
-
-    function startTime(){
-        let interv = setInterval(() => 
-        {
-            setTimer(timer-1);
-            document.getElementById('timer').innerHTML=timer;
-        },1000);
+    function updateRandomWord(e){
+        let word = random();
+        document.getElementById("randomword").innerHTML = word;
+    }
+    
+    if(changeWord === true){
+        updateRandomWord();
+        setChangeWord(false);
     }
 
+    function startTime(){
+        document.getElementById('timer').innerHTML=timer;
+        setInterval(
+            function () {
+                setTimer(timer-1);
+                document.getElementById("timer").innerHTML = "You have " + timer + " doughnuts!";
+       
+            }, 1000);
+    }
 
     return(
         <>
@@ -26,13 +39,19 @@ export default function InputBox(){
                         <br />
                         <input id="inputbox" type="text" />
                         </div>
-                        <div className="card-footer">
-                        <button className="btn btn-small btn-success" onClick={startTime}>Start Practice</button>
+                        <div className="card-footer" onClick={() => {
+                            setChangeWord(true);
+                            setSeeStop(!seeStop);
+                            
+                            }
+                        }>
+                            <div >
+                                {seeStop?<button name="start" className="btn btn-small btn-danger" >Stop</button>:<button name='stop' className="btn btn-small btn-success" onClick={startTime}>Start Practice</button>}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
         </>
     )
 }
