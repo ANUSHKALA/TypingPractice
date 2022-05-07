@@ -5,19 +5,39 @@ export default function InputBox(){
     const [changeWord,setChangeWord] = useState(false);
     const [seeStop,setSeeStop] = useState(false);
 
-    const [seconds, setSeconds] = useState(0)
+    let seconds;
 
-    const startTimer = () => {
-            setInterval(() => {
-                document.querySelector("#timer").innerHTML = seconds;
-                setSeconds(seconds++)
-                console.log(seconds)
-            }, 1000)
+    function strt (e){
+        let seconds = 10;
+        
+
+        if(e.target.name === "start"){
+            let interv = setInterval(() => {
+                seconds-=1;
+                document.getElementById("timer").innerHTML=seconds
+                if(seconds === 0){
+                    clearInterval(interv);
+    
+                }
+                console.log(seconds);
+            }, 1000);
+        }
+
+        else if(e.target.name === "stop"){
+            const stopTimer = function(){
+                clearInterval(seconds===0)
+            }
+        }
+
+
     }
 
-    const stopTimer = () => {
-        clearInterval(setSeconds(0))
-    }
+
+    
+
+
+
+
 
     function updateRandomWord(e){
         let word = random();
@@ -40,7 +60,7 @@ export default function InputBox(){
                 <div className="col s12 m6">
                     <div className="card ">
                         <div className="card-header">
-                        <span id="timer" className="card-title">Timer</span>
+                        <span id="timer" className="card-title">{seconds}</span>
                         </div>
                         <div className="card-content">
                         <h1 id="randomword">WORD</h1>
@@ -54,7 +74,7 @@ export default function InputBox(){
                             }
                         }>
                             <div >
-                                {seeStop?<button name="start" className="btn btn-small btn-danger" onClick={stopTimer} >Stop</button>:<button name='stop' className="btn btn-small btn-success" onClick={startTimer}>Start Practice</button>}
+                                {seeStop?<button name="start" className="btn btn-small btn-danger" onClick={strt} >Stop</button>:<button name='stop' className="btn btn-small btn-success" onClick={strt} >Start Practice</button>}
                             </div>
                         </div>
                     </div>
